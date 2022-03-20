@@ -45,15 +45,21 @@ class Solution(object):
         if len(nums) == 1:
             return nums[0]
 
-        sort_nums = mergeSort(nums, 0, len(nums)-1)
+        # sort_nums = mergeSort(nums, 0, len(nums)-1)
 
-        for i in range(0, len(sort_nums), 2):
-            if i == len(nums)-1:
-                return sort_nums[i]
-            elif sort_nums[i] == sort_nums[i+1]:
-                continue
-            else:
-                return sort_nums[i]
+        # for i in range(0, len(sort_nums), 2):
+        #     if i == len(nums)-1:
+        #         return sort_nums[i]
+        #     elif sort_nums[i] == sort_nums[i+1]:
+        #         continue
+        #     else:
+        #         return sort_nums[i]
+
+        else:
+            res = 0
+            for i in range(len(nums)):
+                res = res ^ nums[i]
+                return res
 
 
 print(Solution.singleNumber([2, 2, 1]))
