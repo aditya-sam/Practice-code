@@ -1,0 +1,30 @@
+class Solution(object):
+    def isPalindrome(x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0:
+            return False
+        elif x < 10:
+            return True
+
+        temp = []
+        num = x
+        p_num = ''
+
+        while x > 0:
+            r = x % 10
+            temp.append(str(r))
+            x = x // 10
+
+        for i in range(len(temp)):
+            p_num += temp[i]
+
+        if int(p_num) == num:
+            return True
+        else:
+            return False
+
+
+print(Solution.isPalindrome(121))
