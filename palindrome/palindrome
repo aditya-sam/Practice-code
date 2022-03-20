@@ -11,17 +11,17 @@ class Solution(object):
 
         temp = []
         num = x
-        p_num = ''
+        p_num = 0
 
         while x > 0:
             r = x % 10
-            temp.append(str(r))
+            temp.append(r)
             x = x // 10
 
         for i in range(len(temp)):
-            p_num += temp[i]
+            p_num = p_num*10 + temp[i]
 
-        if int(p_num) == num:
+        if p_num == num:
             return True
         else:
             return False
